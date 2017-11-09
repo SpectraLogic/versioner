@@ -64,11 +64,11 @@ namespace Versioner
             try
             {
                 var str = File.ReadAllLines("Version.cs");
-                var x = str[4].IndexOf('"') + 1;
-                var y = str[4].LastIndexOf('"');
+                var x = str[3].IndexOf('"') + 1;
+                var y = str[3].LastIndexOf('"');
                 var z = y - x;
 
-                return str[4].Substring(x, z);
+                return str[3].Substring(x, z);
             } catch(Exception ex)
             {
                 MessageBox.Show(Strings.FailedToGetOldVersion, Strings.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
