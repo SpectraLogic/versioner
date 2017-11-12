@@ -63,7 +63,7 @@ namespace Versioner
         {
             try
             {
-                var str = File.ReadAllLines("Version.cs");
+                var str = File.ReadAllLines("..\\Version.cs");
                 var x = str[3].IndexOf('"') + 1;
                 var y = str[3].LastIndexOf('"');
                 var z = y - x;
@@ -80,13 +80,13 @@ namespace Versioner
         {
             try
             {
-                var versionStr = File.ReadAllText("Version.cs");
+                var versionStr = File.ReadAllText("..\\Version.cs");
                 File.WriteAllText("Version.cs", versionStr.Replace(
                     $"{oldVersionMajor}.{oldVersionMinor}.{oldVersionRev}.{oldVersionX}",
                     $"{newVersionMajor}.{newVersionMinor}.{newVersionRev}.0"));
 
-                var setupProjectStr = File.ReadAllText("SetupProject\\SetupProject.wixproj");
-                File.WriteAllText("SetupProject\\SetupProject.wixproj", setupProjectStr.Replace(
+                var setupProjectStr = File.ReadAllText("SetupProject.wixproj");
+                File.WriteAllText("SetupProject.wixproj", setupProjectStr.Replace(
                     $"{oldVersionMajor}.{oldVersionMinor}.{oldVersionRev}",
                     $"{newVersionMajor}.{newVersionMinor}.{newVersionRev}"));
 
