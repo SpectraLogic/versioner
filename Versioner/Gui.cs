@@ -81,7 +81,7 @@ namespace Versioner
             try
             {
                 var versionStr = File.ReadAllText("..\\Version.cs");
-                File.WriteAllText("Version.cs", versionStr.Replace(
+                File.WriteAllText("..\\Version.cs", versionStr.Replace(
                     $"{oldVersionMajor}.{oldVersionMinor}.{oldVersionRev}.{oldVersionX}",
                     $"{newVersionMajor}.{newVersionMinor}.{newVersionRev}.0"));
 
